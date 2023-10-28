@@ -158,49 +158,49 @@ body {
 
 @media screen and (max-width: 1286px){
    .tax-toggle{
-      opacity: 0;
+      display: none;
    }
    
 }
 
 @media screen and (max-width: 1200px){
    .filter-11{
-      opacity: 0;
+    display: none;
    }
    
 }
 
 @media screen and (max-width: 994px){
    .filter-8{
-      opacity: 0;
+    display: none;
    }
    
 }
 
 @media screen and (max-width: 771px){
    .filter-6{
-      opacity: 0;
+    display: none;
    }
    
 }
 
 @media screen and (max-width: 420px){
    .filter-4{
-      opacity: 0;
+    display: none;
    }
    
 }
 
 @media screen and (max-width: 497px){
    .filter-5{
-      opacity: 0;
+    display: none;
    }
    
 }
 
 @media screen and (max-width: 325px){
    .filter-3{
-      opacity: 0;
+      display: none;
    }
    
 }
