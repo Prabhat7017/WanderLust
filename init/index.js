@@ -2,9 +2,9 @@ const mongoose = require("mongoose");
 const initData = require("./data.js");
 const Listing = require("../models/listing.js");
 
-const MONGO_URL = "mongodb+srv://prabhatkumar:YM6RYWKZCytGxpAL@cluster0.vpalz12.mongodb.net/?retryWrites=true&w=majority";
+// const MONGO_URL = "mongodb+srv://prabhatkumar:YM6RYWKZCytGxpAL@cluster0.vpalz12.mongodb.net/?retryWrites=true&w=majority";
 
-// const dbUrl = process.env.ATLASDB_URL;
+const dbUrl = process.env.ATLASDB_URL;
 
 main()
   .then(() => {
@@ -15,7 +15,7 @@ main()
   });
 
 async function main() {
-  await mongoose.connect(MONGO_URL);
+  await mongoose.connect(dbUrl);
 }
 
 const initDB = async () => {
