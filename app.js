@@ -93,6 +93,7 @@ app.get("/", listingRoouter);
 app.use("/listings", listingRoouter);
 app.use("/listings/:id/reviews", reviewRouter);
 app.use("/", userRouter);
+app.use("/search", listingRoouter);
 
 // app.get("/testListing",async(req,res)=>{
 //     let sampleListing=new Listing({

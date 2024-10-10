@@ -22,6 +22,28 @@ router
 
 //New Route
 router.get("/new", isLoggedIn, listingController.renderNewForm);
+// Search route
+// Search route
+router.get('/search', async (req, res) => {
+  const searchQuery = req.query.q; // Capture the search input from the query string
+
+  try {
+      // Search listings by title, location, or country (case-insensitive)
+      const results = await Listing.find({
+          $or: [
+              { title: { $regex: searchQuery, $options: 'i' } }, // Search by title
+              { location: { $regex: searchQuery, $options: 'i' } }, // Search by location
+              { country: { $regex: searchQuery, $options: 'i' } } // Search by country
+          ]
+      }).populate('owner'); // Populate the owner field
+
+      // Render the search results page with the listings found
+      res.render('listings/searchResults', { results, searchQuery });
+  } catch (err) {
+      res.status(500).send('An error occurred while searching');
+  }
+});
+
 
 router
   .route("/:id")
@@ -45,5 +67,6 @@ router.get(
   isOwner,
   wrapAsync(listingController.renderEditForm)
 );
+
 
 module.exports = router;
